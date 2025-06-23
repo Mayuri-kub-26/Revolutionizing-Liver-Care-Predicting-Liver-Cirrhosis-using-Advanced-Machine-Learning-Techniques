@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liver Cirrhosis Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F4F3;
+            color: #78374a;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .form-container {
+            padding: 50px 10%;
+            width: 50%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 42px;
+            padding: 8px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: larger;
+            color: #78374a;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 4px solid #ddd;
+            border-radius: 8px;
+            background-color: #F7F4F3;
+            color: #5B2333;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="text"]:hover {
+            outline: none;
+            border-color: #9b4d67;
+            box-shadow: 0 0 8px rgba(247, 244, 243, 0.4);
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            width: 100%;
+            padding: 14px;
+            background-color: #5B2333;
+            color: #F7F4F3;
+            font-size: 16px;
+            font-weight: bold;
+            border: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c191f8;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #5B2333;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Liver Cirrhosis Prediction Form</h2>
+        <form action="/predict" method="POST">
+            <label>Age:</label><input type="text" name="feature1"><br><br>
+            <label>Gender (Male=1, Female=0):</label><input type="text" name="feature2"><br><br>
+            <label>Total Bilirubin:</label><input type="text" name="feature3"><br><br>
+            <label>Direct Bilirubin:</label><input type="text" name="feature4"><br><br>
+            <label>Alkaline Phosphotase:</label><input type="text" name="feature5"><br><br>
+            <label>SGPT (ALT):</label><input type="text" name="feature6"><br><br>
+            <label>SGOT (AST):</label><input type="text" name="feature7"><br><br>
+            <label>Total Proteins:</label><input type="text" name="feature8"><br><br>
+            <label>Albumin:</label><input type="text" name="feature9"><br><br>
+            <label>Albumin and Globulin Ratio:</label><input type="text" name="feature10"><br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction Result: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
