@@ -1,0 +1,2 @@
+# Revolutionizing-Liver-Care-Predicting-Liver-Cirrhosis-using-Advanced-Machine-Learning-Techniques
+Liver cirrhosis is a chronic and progressive liver disease characterized by the irreversible scarring of liver tissue, which can lead to severe complications and liver failure if left untreated. This project aims to develop a predictive model for the early detection and prognosis of liver cirrhosis using machine learning techniques.
