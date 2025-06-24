@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liver Cirrhosis Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #F7F4F3;
+            color: #2E2E2E;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #5B2333;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #5B2333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #F7F4F3;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #50C9CE;
+            box-shadow: 0 0 6px rgba(80, 201, 206, 0.3);
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 30px;
+            padding: 14px 0;
+            background: linear-gradient(135deg, #5B2333, #78374a);
+            color: #F7F4F3;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #78374a, #5B2333);
+        }
+
+        h3 {
+            margin-top: 30px;
+            text-align: center;
+            font-weight: 500;
+            color: #2E382E;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form-container {
+                padding: 30px 20px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Liver Cirrhosis Prediction Form</h2>
+        <form action="/predict" method="POST">
+            <label>Age:</label><input type="text" name="feature1">
+            <label>Gender (Male=1, Female=0):</label><input type="text" name="feature2">
+            <label>Total Bilirubin:</label><input type="text" name="feature3">
+            <label>Direct Bilirubin:</label><input type="text" name="feature4">
+            <label>Alkaline Phosphotase:</label><input type="text" name="feature5">
+            <label>SGPT (ALT):</label><input type="text" name="feature6">
+            <label>SGOT (AST):</label><input type="text" name="feature7">
+            <label>Total Proteins:</label><input type="text" name="feature8">
+            <label>Albumin:</label><input type="text" name="feature9">
+            <label>Albumin and Globulin Ratio:</label><input type="text" name="feature10">
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction Result: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
