@@ -1,4 +1,0 @@
-Flask
-gunicorn
-scikit-learn
-xgboost
