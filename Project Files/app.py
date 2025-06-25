@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load trained model and scaler
 model = joblib.load('rf_acc_68.pkl')
-scaler = joblib.load('normalizer.pkl')  # ✅ No space in filename
+scaler = joblib.load('normalizer.pkl')  # No space in filename
 
 @app.route('/')
 def home():
@@ -25,4 +25,4 @@ def predict():
     return render_template('index.html', prediction=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
